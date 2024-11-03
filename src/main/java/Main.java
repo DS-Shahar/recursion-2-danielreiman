@@ -3,7 +3,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		int[] array = {9, 10, 100, 120};
-		System.out.println(ex14(array, 2, 0));
+		System.out.println(ex14(array, 2));
 		System.out.println(ex15(array, 2, 0));
 		System.out.println(ex16(array, 2, 0));
 		System.out.println(ex17(array, 0));
@@ -23,12 +23,10 @@ public class Main {
 		return isPrime(num, d+1);
 	}
 	
-	public static int ex14(int[] array, int i, int currentI) {
-		if (currentI <= i) {
-			return ex14(array, i,currentI + 1) + array[currentI];
-		} else {
-			return 0;
-		}
+	public static int ex14(int[] array, int i) {
+		if (i>=0) 
+			return ex14(array, i-1) + array[i];		
+		return 0;
 	}
 	
 	public static int ex15(int[] array, int i, int currentI) {
